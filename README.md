@@ -9,6 +9,16 @@
 
 在线预览支持鼠标旋转、滚轮缩放、组件选择以及爆炸视图。
 
+## 交互式卧室书房场景
+
+项目同时提供一个独立的低多边形卧室书房页面，原有收音机入口与功能保持不变。
+
+- 本地开发：`http://localhost:5173/room.html`
+- 本地生产预览：`http://127.0.0.1:4174/room.html`（端口以终端输出为准）
+- GitHub Pages：在仓库发布地址后追加 `room.html`
+
+房间场景支持：点击门开合、拖动办公椅、点击抽屉拉开/关闭、点击台灯开关灯、鼠标悬停高亮，以及一键重置场景。拖动椅子时会暂时停用 OrbitControls，椅子只沿地面移动并限制在房间范围内。
+
 ## 项目特点
 
 - 程序化 Three.js 建模：机身、提手、扬声器、调谐窗口、旋钮和支脚均由代码创建。
@@ -104,8 +114,14 @@ https://zx2003.github.io/img2threejs-vintage-radio/?light=grazing&az=45&el=16
 ├─ src/
 │  ├─ createObjectModel.ts             # 模型、材质、灯光和相机辅助函数
 │  ├─ main.ts                          # 场景初始化、交互和检查模式
+│  ├─ room/
+│  │  ├─ createRoomScene.ts            # 房间与家具的程序化建模
+│  │  ├─ RoomInteractionController.ts  # 射线拾取、拖动与交互动画
+│  │  ├─ roomApp.ts                    # 房间渲染、相机、灯光和重置逻辑
+│  │  └─ room.css                      # 房间提示界面样式
 │  └─ style.css                        # 预览界面样式
 ├─ index.html                          # Vite 页面入口
+├─ room.html                           # 房间场景页面入口
 ├─ package.json                        # npm 脚本与依赖
 ├─ tsconfig.json                       # TypeScript 配置
 └─ vite.config.ts                      # Vite 与 Pages 相对路径配置
