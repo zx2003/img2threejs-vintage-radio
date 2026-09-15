@@ -2,5 +2,35 @@ node_modules/
 dist/
 .npm-cache/
 .edge*/
+.worktrees/
 evidence/
 *.log
+
+# Generated projects, local package caches, and temporary ZIP verification trees.
+outputs/*
+!outputs/.gitkeep
+!outputs/final-delivery/
+outputs/final-delivery/*
+!outputs/final-delivery/ACCEPTANCE_REPORT.md
+!outputs/final-delivery/KEY_RESULTS.md
+!outputs/final-delivery/complete-validation-report.json
+!outputs/final-delivery/pipeline-validation-report.json
+!outputs/final-delivery/scene-spec.json
+!outputs/final-delivery/observatory-project.zip
+!outputs/final-delivery/observatory-scene.png
+!outputs/final-delivery/observatory-interactions.png
+!outputs/final-delivery/command-and-zip.png
+!outputs/final-delivery/acceptance-summary.html
+
+# Local reconstruction evidence and one-off capture/authoring helpers.
+.img2threejs/
+room-admission.json
+room-detail-inventory.json
+room-detail-inventory/
+room-image-analysis.md
+room-pre-spec-assessment.json
+room-probe.json
+room-sculpt-spec.json
+room-strict-validation.txt
+scripts/author_room_spec.mjs
+scripts/capture_cdp_screenshot.py

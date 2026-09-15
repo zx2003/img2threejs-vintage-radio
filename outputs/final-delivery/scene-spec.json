@@ -1,0 +1,574 @@
+{
+  "version": "1.0",
+  "name": "scene-5a21bcff",
+  "title": "低多边形天文台",
+  "style": {
+    "preset": "low-poly",
+    "background": "#ded6ca",
+    "groundColor": "#b98655"
+  },
+  "camera": {
+    "type": "perspective",
+    "position": [
+      12,
+      10,
+      13
+    ],
+    "target": [
+      0,
+      1.4,
+      0
+    ],
+    "fov": 36,
+    "near": 0.05,
+    "far": 100
+  },
+  "lights": [
+    {
+      "id": "ambient",
+      "type": "hemisphere",
+      "color": "#ffe4bc",
+      "groundColor": "#6b625a",
+      "intensity": 1.4
+    },
+    {
+      "id": "key",
+      "type": "directional",
+      "color": "#ffd398",
+      "intensity": 2.4,
+      "position": [
+        -6,
+        10,
+        7
+      ],
+      "castShadow": true
+    },
+    {
+      "id": "fill",
+      "type": "directional",
+      "color": "#e8f0ff",
+      "intensity": 0.45,
+      "position": [
+        7,
+        5,
+        4
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "floor",
+      "name": "Scene floor",
+      "type": "architecture",
+      "geometry": {
+        "shape": "box",
+        "size": [
+          10,
+          0.18,
+          10
+        ]
+      },
+      "material": {
+        "color": "#b98655",
+        "roughness": 0.88
+      },
+      "transform": {
+        "position": [
+          0,
+          -0.1,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "receiveShadow": true
+    },
+    {
+      "id": "back-wall",
+      "name": "Back wall",
+      "type": "architecture",
+      "geometry": {
+        "shape": "box",
+        "size": [
+          10,
+          5.5,
+          0.16
+        ]
+      },
+      "material": {
+        "color": "#eadfcf",
+        "roughness": 0.95
+      },
+      "transform": {
+        "position": [
+          0,
+          2.65,
+          -5
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "receiveShadow": true
+    },
+    {
+      "id": "side-wall",
+      "name": "Side wall",
+      "type": "architecture",
+      "geometry": {
+        "shape": "box",
+        "size": [
+          0.16,
+          5.5,
+          10
+        ]
+      },
+      "material": {
+        "color": "#f1e7d6",
+        "roughness": 0.95
+      },
+      "transform": {
+        "position": [
+          -5,
+          2.65,
+          0
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "receiveShadow": true
+    },
+    {
+      "id": "glass-door-1",
+      "name": "Glass door",
+      "type": "door",
+      "geometry": {
+        "shape": "box",
+        "size": [
+          1.35,
+          2.8,
+          0.12
+        ]
+      },
+      "material": {
+        "color": "#8f6848",
+        "roughness": 0.58
+      },
+      "transform": {
+        "position": [
+          -4.7,
+          1.4,
+          -4.45
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "interactions": [
+        {
+          "type": "hinge",
+          "axis": "y",
+          "min": 0,
+          "max": 1.5707963267948966
+        },
+        {
+          "type": "hover"
+        }
+      ],
+      "castShadow": true,
+      "receiveShadow": true,
+      "children": [
+        {
+          "id": "glass-door-1-glass",
+          "name": "Door glass panel",
+          "type": "glass",
+          "geometry": {
+            "shape": "box",
+            "size": [
+              0.85,
+              1.85,
+              0.04
+            ]
+          },
+          "material": {
+            "color": "#b9e1e1",
+            "roughness": 0.12,
+            "metalness": 0.05,
+            "transparent": true,
+            "opacity": 0.48
+          },
+          "transform": {
+            "position": [
+              0.68,
+              0.25,
+              0.09
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        {
+          "id": "glass-door-1-handle",
+          "name": "Door handle",
+          "type": "handle",
+          "geometry": {
+            "shape": "sphere",
+            "radius": 0.09,
+            "segments": 12
+          },
+          "material": {
+            "color": "#d7ad62",
+            "roughness": 0.28,
+            "metalness": 0.65
+          },
+          "transform": {
+            "position": [
+              1.18,
+              0,
+              0.13
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "castShadow": true,
+          "receiveShadow": true
+        }
+      ]
+    },
+    {
+      "id": "chair-2",
+      "name": "Movable chair",
+      "type": "chair",
+      "geometry": {
+        "shape": "box",
+        "size": [
+          1.15,
+          0.18,
+          1.15
+        ]
+      },
+      "material": {
+        "color": "#4d514f",
+        "roughness": 0.78
+      },
+      "transform": {
+        "position": [
+          0,
+          0.85,
+          0.7
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "interactions": [
+        {
+          "type": "drag",
+          "bounds": {
+            "minX": -4.3,
+            "maxX": 4.3,
+            "minZ": -4.2,
+            "maxZ": 4.2
+          }
+        },
+        {
+          "type": "hover"
+        }
+      ],
+      "castShadow": true,
+      "receiveShadow": true,
+      "children": [
+        {
+          "id": "chair-2-back",
+          "name": "Chair back",
+          "type": "chair-part",
+          "geometry": {
+            "shape": "box",
+            "size": [
+              1.15,
+              1.25,
+              0.16
+            ]
+          },
+          "material": {
+            "color": "#4d514f",
+            "roughness": 0.78
+          },
+          "transform": {
+            "position": [
+              0,
+              0.65,
+              0.5
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "castShadow": true,
+          "receiveShadow": true
+        },
+        {
+          "id": "chair-2-base",
+          "name": "Chair base",
+          "type": "chair-part",
+          "geometry": {
+            "shape": "cylinder",
+            "radiusTop": 0.48,
+            "radiusBottom": 0.62,
+            "height": 0.14,
+            "segments": 8
+          },
+          "material": {
+            "color": "#292b2a",
+            "roughness": 0.68
+          },
+          "transform": {
+            "position": [
+              0,
+              -0.72,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "castShadow": true,
+          "receiveShadow": true
+        }
+      ]
+    },
+    {
+      "id": "generic-object-3",
+      "name": "望远镜",
+      "type": "generic",
+      "geometry": {
+        "shape": "box",
+        "size": [
+          1.2,
+          1.2,
+          1.2
+        ]
+      },
+      "material": {
+        "color": "#6c8f86",
+        "roughness": 0.72
+      },
+      "transform": {
+        "position": [
+          2.2,
+          0.6,
+          -1
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "interactions": [
+        {
+          "type": "rotate",
+          "axis": "y",
+          "min": -3.141592653589793,
+          "max": 3.141592653589793
+        },
+        {
+          "type": "hover"
+        }
+      ],
+      "castShadow": true,
+      "receiveShadow": true,
+      "children": [
+        {
+          "id": "generic-object-3-accent",
+          "name": "望远镜 accent",
+          "type": "generic-detail",
+          "geometry": {
+            "shape": "cylinder",
+            "radiusTop": 0.32,
+            "radiusBottom": 0.42,
+            "height": 0.7,
+            "segments": 8
+          },
+          "material": {
+            "color": "#d7aa64",
+            "roughness": 0.65
+          },
+          "transform": {
+            "position": [
+              0,
+              0.9,
+              0
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "generic-object-4",
+      "name": "墙灯",
+      "type": "light",
+      "geometry": {
+        "shape": "sphere",
+        "radius": 0.32,
+        "segments": 10
+      },
+      "material": {
+        "color": "#ffe0a1",
+        "roughness": 0.35,
+        "emissive": "#ffb45c",
+        "emissiveIntensity": 0.05
+      },
+      "transform": {
+        "position": [
+          3.7,
+          3.25,
+          -4.72
+        ],
+        "rotation": [
+          0,
+          0,
+          0
+        ],
+        "scale": [
+          1,
+          1,
+          1
+        ]
+      },
+      "interactions": [
+        {
+          "type": "toggle"
+        },
+        {
+          "type": "hover"
+        }
+      ],
+      "castShadow": true,
+      "receiveShadow": true,
+      "children": [
+        {
+          "id": "generic-object-4-accent",
+          "name": "墙灯 accent",
+          "type": "light-mount",
+          "geometry": {
+            "shape": "cylinder",
+            "radiusTop": 0.18,
+            "radiusBottom": 0.24,
+            "height": 0.35,
+            "segments": 8
+          },
+          "material": {
+            "color": "#8b633f",
+            "roughness": 0.65
+          },
+          "transform": {
+            "position": [
+              0,
+              0,
+              -0.22
+            ],
+            "rotation": [
+              0,
+              0,
+              0
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "source": {
+    "kind": "prompt",
+    "value": "生成一个低多边形天文台，入口门可以打开，望远镜可以旋转，操作椅可以在地面拖动，墙灯可以点击开关"
+  }
+}

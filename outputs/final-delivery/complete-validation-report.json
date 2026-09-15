@@ -1,0 +1,55 @@
+{
+  "acceptanceDate": "2026-09-15T16:51:50+08:00",
+  "scene": {
+    "name": "scene-5a21bcff",
+    "title": "低多边形天文台",
+    "prompt": "生成一个低多边形天文台，入口门可以打开，望远镜可以旋转，操作椅可以在地面拖动，墙灯可以点击开关"
+  },
+  "pipelineComplete": true,
+  "observatorySpecificBranchesFound": false,
+  "interactions": {
+    "glass-door-1": ["hinge", "hover"],
+    "chair-2": ["drag", "hover"],
+    "generic-object-3": ["rotate", "hover"],
+    "generic-object-4": ["toggle", "hover"]
+  },
+  "checks": [
+    { "name": "repository-inventory", "passed": true, "details": "CLI, pipeline, spec, generator, component library, validators, templates, packager, examples, tests and README present" },
+    { "name": "scene-spec", "passed": true, "details": "Valid Scene Spec; 9 non-blocking warnings for static objects" },
+    { "name": "required-files", "passed": true, "details": "10 required generated-project files found" },
+    { "name": "asset-paths", "passed": true, "details": "No unsafe or machine-local paths" },
+    { "name": "basic-quality", "passed": true, "details": "13 unique object nodes; interaction and animation runtime present" },
+    { "name": "generated-npm-install", "passed": true, "details": "Dependencies installed successfully during generation" },
+    { "name": "generated-typescript-vite-build", "passed": true, "details": "Passed during generation" },
+    { "name": "development-http", "passed": true, "details": "HTTP 200 and /src/main.ts confirmed at 2026-09-15 16:51:50 +08:00" },
+    { "name": "zip-created", "passed": true, "details": "76,725-byte ZIP created only after Pipeline gates passed" },
+    { "name": "zip-extraction", "passed": true, "details": "Expanded successfully into a new directory" },
+    { "name": "zip-isolated-npm-install", "passed": true, "details": "24 packages installed" },
+    { "name": "zip-isolated-typescript-vite-build", "passed": true, "details": "10 modules transformed; production build passed" },
+    { "name": "root-tests", "passed": true, "details": "2 of 2 test groups passed" },
+    { "name": "root-build", "passed": true, "details": "25 modules transformed; radio and room HTML entries produced" }
+  ],
+  "artifacts": {
+    "zip": "observatory-project.zip",
+    "sceneSpec": "scene-spec.json",
+    "pipelineReport": "pipeline-validation-report.json",
+    "acceptanceReport": "ACCEPTANCE_REPORT.md",
+    "screenshots": ["command-and-zip.png", "observatory-scene.png", "observatory-interactions.png"]
+  },
+  "zipSha256": "247FDDA0980914BE1EADF7643D6E0B5D503254D5849092BADC3A2B2E8393CBB1",
+  "git": {
+    "branch": "main",
+    "workingTreeClean": false,
+    "modifiedEntries": 6,
+    "untrackedEntries": 25,
+    "originOnlyCommits": 3,
+    "localOnlyCommits": 2,
+    "fetchedOriginBeforeCheck": true
+  },
+  "warnings": [
+    "Generated bundle is about 516 KB and exceeds Vite's advisory threshold.",
+    "Root shared Three.js chunk is about 542 KB and exceeds Vite's advisory threshold.",
+    "Unknown-object geometry is functional but visually approximate.",
+    "Working tree and origin/main are not synchronized."
+  ]
+}

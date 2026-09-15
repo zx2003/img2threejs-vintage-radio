@@ -8,8 +8,7 @@
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
-    "types": ["node"]
+    "lib": ["ES2022", "DOM", "DOM.Iterable"]
   },
-  "include": ["src", "tests"]
+  "include": ["src"]
 }

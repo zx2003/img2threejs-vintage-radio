@@ -1,25 +1,18 @@
 {
-  "name": "threejs-scene-factory",
+  "name": "__SCENE_NAME__",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "bin": {
-    "generate-scene": "./bin/generate-scene.mjs"
-  },
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview",
-    "generate-scene": "tsx src/cli/index.ts",
-    "test": "tsx tests/run.ts"
+    "preview": "vite preview"
   },
   "dependencies": {
     "three": "^0.180.0"
   },
   "devDependencies": {
-    "@types/node": "^20.17.30",
     "@types/three": "^0.180.0",
-    "tsx": "^4.19.3",
     "typescript": "^5.9.2",
     "vite": "^6.1.0"
   }

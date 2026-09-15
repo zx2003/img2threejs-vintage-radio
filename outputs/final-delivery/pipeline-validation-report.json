@@ -1,0 +1,35 @@
+{
+  "scene": "scene-5a21bcff",
+  "checks": [
+    {
+      "name": "scene-spec",
+      "passed": true,
+      "details": "Scene Spec valid (9 non-blocking warnings)"
+    },
+    {
+      "name": "required-files",
+      "passed": true,
+      "details": "10 required files found"
+    },
+    {
+      "name": "asset-paths",
+      "passed": true,
+      "details": "No unsafe or machine-local asset paths found"
+    },
+    {
+      "name": "basic-quality",
+      "passed": true,
+      "details": "13 uniquely identified objects; generic interaction and animation runtime present"
+    },
+    {
+      "name": "npm-install",
+      "passed": true,
+      "details": "Dependencies installed successfully"
+    },
+    {
+      "name": "typescript-vite-build",
+      "passed": true,
+      "details": "TypeScript check and Vite production build passed"
+    }
+  ]
+}

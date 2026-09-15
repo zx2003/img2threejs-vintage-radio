@@ -1,0 +1,82 @@
+{
+  "version": "1.0",
+  "components": [
+    {
+      "key": "glass-door",
+      "aliases": ["玻璃门", "glass door", "门", "door"],
+      "name": "Glass door",
+      "type": "door",
+      "geometry": { "shape": "box", "size": [1.35, 2.8, 0.12] },
+      "material": { "color": "#8f6848", "roughness": 0.58 },
+      "position": [-4.7, 1.4, -4.45],
+      "children": [
+        { "suffix": "glass", "name": "Door glass panel", "type": "glass", "geometry": { "shape": "box", "size": [0.85, 1.85, 0.04] }, "material": { "color": "#b9e1e1", "roughness": 0.12, "metalness": 0.05, "transparent": true, "opacity": 0.48 }, "position": [0.68, 0.25, 0.09] },
+        { "suffix": "handle", "name": "Door handle", "type": "handle", "geometry": { "shape": "sphere", "radius": 0.09, "segments": 12 }, "material": { "color": "#d7ad62", "roughness": 0.28, "metalness": 0.65 }, "position": [1.18, 0, 0.13] }
+      ]
+    },
+    {
+      "key": "chair",
+      "aliases": ["办公椅", "椅子", "椅", "chair", "seat"],
+      "name": "Movable chair",
+      "type": "chair",
+      "geometry": { "shape": "box", "size": [1.15, 0.18, 1.15] },
+      "material": { "color": "#4d514f", "roughness": 0.78 },
+      "position": [0, 0.85, 0.7],
+      "children": [
+        { "suffix": "back", "name": "Chair back", "type": "chair-part", "geometry": { "shape": "box", "size": [1.15, 1.25, 0.16] }, "material": { "color": "#4d514f", "roughness": 0.78 }, "position": [0, 0.65, 0.5] },
+        { "suffix": "base", "name": "Chair base", "type": "chair-part", "geometry": { "shape": "cylinder", "radiusTop": 0.48, "radiusBottom": 0.62, "height": 0.14, "segments": 8 }, "material": { "color": "#292b2a", "roughness": 0.68 }, "position": [0, -0.72, 0] }
+      ]
+    },
+    {
+      "key": "pendant-lamp",
+      "aliases": ["吊灯", "台灯", "pendant lamp", "lamp", "light"],
+      "name": "Pendant lamp",
+      "type": "light",
+      "geometry": { "shape": "cylinder", "radiusTop": 0.035, "radiusBottom": 0.035, "height": 1.4, "segments": 8 },
+      "material": { "color": "#4c3d32", "roughness": 0.6 },
+      "position": [2.3, 4.4, -0.4],
+      "children": [
+        { "suffix": "shade", "name": "Lamp shade", "type": "lamp-part", "geometry": { "shape": "cone", "radius": 0.6, "height": 0.65, "segments": 12 }, "material": { "color": "#d48745", "roughness": 0.62 }, "position": [0, -0.95, 0] },
+        { "suffix": "bulb", "name": "Lamp bulb", "type": "bulb", "geometry": { "shape": "sphere", "radius": 0.18, "segments": 12 }, "material": { "color": "#fff0b3", "roughness": 0.25, "emissive": "#ffb84f", "emissiveIntensity": 0.08 }, "position": [0, -1.15, 0] }
+      ]
+    },
+    {
+      "key": "table",
+      "aliases": ["书桌", "桌子", "餐桌", "柜台", "table", "desk", "counter"],
+      "name": "Table",
+      "type": "furniture",
+      "geometry": { "shape": "box", "size": [2.8, 0.18, 1.35] },
+      "material": { "color": "#a86f3f", "roughness": 0.72 },
+      "position": [1.6, 1.15, -2.5],
+      "children": [
+        { "suffix": "pedestal-left", "name": "Table left pedestal", "type": "support", "geometry": { "shape": "box", "size": [0.22, 1.95, 1.05] }, "material": { "color": "#80502f", "roughness": 0.76 }, "position": [-1.12, -1.0, 0] },
+        { "suffix": "pedestal-right", "name": "Table right pedestal", "type": "support", "geometry": { "shape": "box", "size": [0.22, 1.95, 1.05] }, "material": { "color": "#80502f", "roughness": 0.76 }, "position": [1.12, -1.0, 0] }
+      ]
+    },
+    {
+      "key": "shelf",
+      "aliases": ["书架", "货架", "shelf", "bookshelf"],
+      "name": "Shelf",
+      "type": "storage",
+      "geometry": { "shape": "box", "size": [2.2, 0.16, 0.65] },
+      "material": { "color": "#9b6538", "roughness": 0.75 },
+      "position": [3.4, 2.2, -4.0],
+      "children": [
+        { "suffix": "side-left", "name": "Shelf left side", "type": "support", "geometry": { "shape": "box", "size": [0.16, 3.6, 0.65] }, "material": { "color": "#80502f", "roughness": 0.76 }, "position": [-1.02, -0.2, 0] },
+        { "suffix": "side-right", "name": "Shelf right side", "type": "support", "geometry": { "shape": "box", "size": [0.16, 3.6, 0.65] }, "material": { "color": "#80502f", "roughness": 0.76 }, "position": [1.02, -0.2, 0] }
+      ]
+    },
+    {
+      "key": "plant",
+      "aliases": ["盆栽", "植物", "plant"],
+      "name": "Plant",
+      "type": "decor",
+      "geometry": { "shape": "cylinder", "radiusTop": 0.32, "radiusBottom": 0.24, "height": 0.55, "segments": 10 },
+      "material": { "color": "#c28c61", "roughness": 0.82 },
+      "position": [-3.5, 0.28, 2.8],
+      "children": [
+        { "suffix": "foliage", "name": "Plant foliage", "type": "foliage", "geometry": { "shape": "sphere", "radius": 0.65, "segments": 8 }, "material": { "color": "#537240", "roughness": 0.9 }, "position": [0, 0.85, 0] }
+      ]
+    }
+  ]
+}

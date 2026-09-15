@@ -1,0 +1,7 @@
+{
+  "kind": "legacy-reference",
+  "name": "vintage-radio",
+  "entry": "../../index.html",
+  "sources": ["../../src/main.ts", "../../src/createObjectModel.ts", "../../src/style.css"],
+  "notes": "Preserved in place for URL and evidence compatibility; excluded from generator decisions."
+}

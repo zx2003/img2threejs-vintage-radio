@@ -1,0 +1,12 @@
+{
+  "kind": "legacy-reference",
+  "name": "interactive-bedroom-study",
+  "entry": "../../room.html",
+  "sources": [
+    "../../src/room/roomApp.ts",
+    "../../src/room/createRoomScene.ts",
+    "../../src/room/RoomInteractionController.ts",
+    "../../src/room/room.css"
+  ],
+  "notes": "Preserved in place to retain user modifications and the published room.html route."
+}

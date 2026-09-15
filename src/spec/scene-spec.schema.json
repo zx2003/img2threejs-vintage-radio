@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/threejs-scene-factory/scene-spec.schema.json",
+  "title": "Three.js Scene Factory Scene Spec",
+  "type": "object",
+  "required": ["version", "name", "title", "style", "camera", "lights", "objects"],
+  "properties": {
+    "version": { "const": "1.0" },
+    "name": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+    "title": { "type": "string", "minLength": 1 },
+    "style": {
+      "type": "object",
+      "required": ["preset", "background", "groundColor"],
+      "properties": {
+        "preset": { "type": "string" },
+        "background": { "$ref": "#/$defs/color" },
+        "groundColor": { "$ref": "#/$defs/color" }
+      },
+      "additionalProperties": false
+    },
+    "camera": {
+      "type": "object",
+      "required": ["type", "position", "target", "fov", "near", "far"],
+      "properties": {
+        "type": { "const": "perspective" },
+        "position": { "$ref": "#/$defs/vec3" },
+        "target": { "$ref": "#/$defs/vec3" },
+        "fov": { "type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 180 },
+        "near": { "type": "number", "exclusiveMinimum": 0 },
+        "far": { "type": "number", "exclusiveMinimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "lights": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/light" } },
+    "objects": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/object" } }
+  },
+  "$defs": {
+    "color": { "type": "string", "pattern": "^#[0-9a-fA-F]{6}$" },
+    "vec3": { "type": "array", "minItems": 3, "maxItems": 3, "items": { "type": "number" } },
+    "geometry": {
+      "type": "object",
+      "required": ["shape"],
+      "properties": {
+        "shape": { "enum": ["box", "sphere", "cylinder", "cone", "plane", "torus"] },
+        "size": { "$ref": "#/$defs/vec3" },
+        "radius": { "type": "number", "exclusiveMinimum": 0 },
+        "radiusTop": { "type": "number", "minimum": 0 },
+        "radiusBottom": { "type": "number", "minimum": 0 },
+        "tube": { "type": "number", "exclusiveMinimum": 0 },
+        "height": { "type": "number", "exclusiveMinimum": 0 },
+        "segments": { "type": "integer", "minimum": 3 }
+      }
+    },
+    "material": {
+      "type": "object",
+      "required": ["color"],
+      "properties": {
+        "color": { "$ref": "#/$defs/color" },
+        "roughness": { "type": "number", "minimum": 0, "maximum": 1 },
+        "metalness": { "type": "number", "minimum": 0, "maximum": 1 },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 1 },
+        "transparent": { "type": "boolean" },
+        "emissive": { "$ref": "#/$defs/color" },
+        "emissiveIntensity": { "type": "number", "minimum": 0 }
+      }
+    },
+    "interaction": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": { "enum": ["toggle", "hinge", "rotate", "drag", "hover"] },
+        "axis": { "enum": ["x", "y", "z"] },
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "bounds": {
+          "type": "object",
+          "required": ["minX", "maxX", "minZ", "maxZ"],
+          "properties": {
+            "minX": { "type": "number" }, "maxX": { "type": "number" },
+            "minZ": { "type": "number" }, "maxZ": { "type": "number" }
+          }
+        }
+      }
+    },
+    "object": {
+      "type": "object",
+      "required": ["id", "name", "type", "geometry", "material", "transform"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "type": { "type": "string", "minLength": 1 },
+        "geometry": { "$ref": "#/$defs/geometry" },
+        "material": { "$ref": "#/$defs/material" },
+        "transform": {
+          "type": "object",
+          "required": ["position", "rotation", "scale"],
+          "properties": {
+            "position": { "$ref": "#/$defs/vec3" },
+            "rotation": { "$ref": "#/$defs/vec3" },
+            "scale": { "$ref": "#/$defs/vec3" }
+          }
+        },
+        "interactions": { "type": "array", "items": { "$ref": "#/$defs/interaction" } },
+        "children": { "type": "array", "items": { "$ref": "#/$defs/object" } },
+        "castShadow": { "type": "boolean" },
+        "receiveShadow": { "type": "boolean" }
+      }
+    },
+    "light": {
+      "type": "object",
+      "required": ["id", "type", "color", "intensity"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": { "enum": ["ambient", "hemisphere", "directional", "point"] },
+        "color": { "$ref": "#/$defs/color" },
+        "groundColor": { "$ref": "#/$defs/color" },
+        "intensity": { "type": "number", "minimum": 0 },
+        "position": { "$ref": "#/$defs/vec3" },
+        "castShadow": { "type": "boolean" }
+      }
+    }
+  }
+}

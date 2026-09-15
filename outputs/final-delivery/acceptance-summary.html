@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Three.js Scene Factory 最终验收</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f1eee8;color:#282521;font-family:Inter,"Microsoft YaHei",sans-serif}.page{width:1440px;height:960px;padding:54px 68px;display:grid;grid-template-rows:auto auto 1fr auto;gap:28px}.head{display:flex;justify-content:space-between;align-items:flex-start}.eyebrow{font-size:18px;color:#746c63;letter-spacing:.08em}.title{font-size:42px;margin:8px 0 0}.status{padding:14px 20px;border-radius:99px;background:#dff2e3;color:#24643a;font-size:20px;font-weight:700}.prompt{background:#fff;border:1px solid #ded8cf;border-radius:18px;padding:20px 24px;font-size:22px;box-shadow:0 8px 25px #4d392313}.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;align-items:center}.step{background:#fff;border:1px solid #ded8cf;border-radius:16px;padding:20px 15px;text-align:center;min-height:126px}.step strong{display:block;font-size:28px;color:#8b613c;margin-bottom:8px}.step span{font-size:18px}.checks{display:grid;grid-template-columns:1fr 1fr;gap:18px}.panel{background:#fff;border:1px solid #ded8cf;border-radius:18px;padding:24px}.panel h2{margin:0 0 17px;font-size:24px}.row{display:flex;justify-content:space-between;border-bottom:1px solid #ece7df;padding:11px 0;font-size:18px}.row:last-child{border-bottom:0}.pass{color:#267342;font-weight:700}.path{font-family:Consolas,monospace;font-size:16px;word-break:break-all;color:#5d554d}.footer{display:grid;grid-template-columns:1fr 1fr;gap:18px}.hash{font-family:Consolas,monospace;font-size:15px;word-break:break-all}.warn{color:#91591d}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="head"><div><div class="eyebrow">FINAL ACCEPTANCE · 2026-09-15</div><h1 class="title">Three.js Scene Factory</h1></div><div class="status">MVP PIPELINE · PASS</div></header>
+    <section class="prompt">输入：生成一个低多边形天文台，入口门可以打开，望远镜可以旋转，操作椅可以在地面拖动，墙灯可以点击开关</section>
+    <section class="flow">
+      <div class="step"><strong>01</strong><span>自然语言解析</span></div><div class="step"><strong>02</strong><span>Scene Spec</span></div><div class="step"><strong>03</strong><span>项目生成</span></div><div class="step"><strong>04</strong><span>六项门控</span></div><div class="step"><strong>05</strong><span>独立构建</span></div><div class="step"><strong>06</strong><span>ZIP 交付</span></div>
+    </section>
+    <section class="checks">
+      <div class="panel"><h2>实际运行结果</h2><div class="row"><span>Scene Spec / 文件 / 资源 / 质量</span><span class="pass">PASS</span></div><div class="row"><span>生成项目 npm install</span><span class="pass">PASS</span></div><div class="row"><span>生成项目 TypeScript + Vite</span><span class="pass">PASS</span></div><div class="row"><span>本地开发服务器 HTTP 200</span><span class="pass">PASS</span></div><div class="row"><span>ZIP 解压后 npm install + build</span><span class="pass">PASS</span></div><div class="row"><span>根仓库测试与双入口构建</span><span class="pass">PASS</span></div></div>
+      <div class="panel"><h2>交互映射</h2><div class="row"><span>入口门</span><span>hinge + hover</span></div><div class="row"><span>望远镜</span><span>rotate + hover</span></div><div class="row"><span>操作椅</span><span>drag + hover</span></div><div class="row"><span>墙灯</span><span>toggle + hover</span></div><p class="warn">视觉结论：通用基础几何可运行；望远镜仍是低细节参数化近似。</p></div>
+    </section>
+    <footer class="footer"><div><strong>ZIP</strong><div class="path">D:\桌面\img2threejs-test\outputs\final-delivery\observatory-project.zip</div></div><div><strong>SHA-256</strong><div class="hash">247FDDA0980914BE1EADF7643D6E0B5D503254D5849092BADC3A2B2E8393CBB1</div></div></footer>
+  </main>
+</body>
+</html>
