@@ -38,18 +38,23 @@
   },
   "zipSha256": "247FDDA0980914BE1EADF7643D6E0B5D503254D5849092BADC3A2B2E8393CBB1",
   "git": {
-    "branch": "main",
-    "workingTreeClean": false,
-    "modifiedEntries": 6,
-    "untrackedEntries": 25,
-    "originOnlyCommits": 3,
-    "localOnlyCommits": 2,
-    "fetchedOriginBeforeCheck": true
+    "branch": "pipeline-mvp-final",
+    "baseCommit": "0177176",
+    "backupBranch": "codex/backup-pipeline-mvp-final-20260915",
+    "integratedOriginMain": true,
+    "conflicts": ["README.md"],
+    "conflictResolution": "Combined Pipeline documentation with the original radio and room documentation",
+    "forcePushUsed": false,
+    "destructiveCommandsUsed": false,
+    "postIntegrationTestsPassed": true,
+    "postIntegrationBuildPassed": true,
+    "postIntegrationObservatoryGenerationPassed": true,
+    "fetchedOriginBeforeIntegration": true
   },
   "warnings": [
     "Generated bundle is about 516 KB and exceeds Vite's advisory threshold.",
     "Root shared Three.js chunk is about 542 KB and exceeds Vite's advisory threshold.",
     "Unknown-object geometry is functional but visually approximate.",
-    "Working tree and origin/main are not synchronized."
+    "Vite reports a non-blocking large-chunk advisory for the shared Three.js bundle."
   ]
 }

@@ -80,10 +80,17 @@ export function checkBasicQuality(spec: SceneSpec, projectSources: string): Chec
 
 function run(command: string, args: string[], cwd: string): Promise<{ code: number; output: string }> {
   return new Promise((resolveRun) => {
+    const env = { ...process.env };
+    for (const key of Object.keys(env)) {
+      const normalized = key.toLowerCase();
+      if (normalized === 'npm_config_cache' || normalized === 'npm_config_offline') delete env[key];
+    }
+    env.NPM_CONFIG_CACHE = resolve(cwd, '..', '.npm-cache');
+    env.NPM_CONFIG_OFFLINE = 'false';
     const child = spawn(command, args, {
       cwd,
       shell: process.platform === 'win32',
-      env: { ...process.env, NO_COLOR: '1', npm_config_cache: resolve(cwd, '..', '.npm-cache') },
+      env: { ...env, NO_COLOR: '1' },
     });
     let output = '';
     child.stdout.on('data', (chunk) => { output += chunk.toString(); });

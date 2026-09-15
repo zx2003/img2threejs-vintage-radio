@@ -11,7 +11,9 @@
 - ZIP-isolated TypeScript + Vite build: PASS, 10 modules transformed
 - Root tests: PASS, 2/2 groups
 - Root build: PASS, radio and room HTML entries produced
-- Git: local changes remain uncommitted/unpushed; local and `origin/main` histories are divergent
+- Git: `pipeline-mvp-final` is based on current `origin/main`; one README conflict was resolved by retaining both Pipeline and original-case documentation
+- Safety backup: `codex/backup-pipeline-mvp-final-20260915`
+- Post-integration revalidation: root tests/build and fresh observatory generation all PASS
 
 ## Commands actually run
 
@@ -23,4 +25,5 @@ npm run build
 npm test
 npm run build
 git fetch origin
+npm run generate-scene -- --prompt "生成一个低多边形天文台，入口门可以打开，望远镜可以旋转，操作椅可以在地面拖动，墙灯可以点击开关" --output outputs/final-regeneration
 ```

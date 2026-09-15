@@ -155,12 +155,14 @@ Open the local address printed by Vite. Use the mouse to orbit and zoom. Click t
 - Generated bundles currently include most of Three.js in one chunk and exceed Vite’s 500 KB advisory threshold.
 - The Windows Computer Use screenshot helper failed to initialize with `failed to write kernel assets ... os error 3`; browser screenshots were instead captured from the actual local page using the installed Edge headless runtime.
 
-## Git status at acceptance time
+## Git integration and final revalidation
 
-`git fetch origin` completed successfully before this report.
+The final branch `pipeline-mvp-final` was created directly from the fetched `origin/main` tip (`0177176`) and then received the reviewed Pipeline MVP commit. This incorporates the remote radio and room history without rewriting it.
 
-- Current branch: `main`.
-- Working tree: dirty — 6 modified entries and 25 untracked entries reported by Git.
-- Divergence: `origin/main` has 3 commits not in local `HEAD`; local `HEAD` has 2 commits not in `origin/main`.
-- Therefore the Pipeline changes and final delivery are not committed or pushed as a clean synchronized GitHub state.
-- No commit, merge, force-push, reset, or deletion of the user’s existing scene work was performed during this acceptance.
+- Recovery branch: `codex/backup-pipeline-mvp-final-20260915`.
+- Final branch: `pipeline-mvp-final`.
+- One conflict occurred in `README.md`; the Pipeline documentation and the remote radio/room instructions were combined.
+- No force push, hard reset, clean, or checkout-based discard was used.
+- A Windows npm environment conflict was fixed generically by isolating generated-project cache/offline variables; no observatory-specific branch was added.
+- After integration, `npm test`, the root build, and a fresh observatory generation all passed.
+- The final commit and GitHub URL are reported in the accompanying handoff because a commit cannot reliably contain its own final ID.
