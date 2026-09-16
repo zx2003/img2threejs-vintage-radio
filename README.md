@@ -247,8 +247,9 @@ npm run build
 
 ## 原有预览与部署
 
-- 收音机：<https://zx2003.github.io/img2threejs-vintage-radio/>
-- 房间：<https://zx2003.github.io/img2threejs-vintage-radio/room.html>
+- GitHub 仓库：<https://github.com/zx2003/threejs-scene-factory>
+- 收音机示例：<https://zx2003.github.io/threejs-scene-factory/>
+- 房间示例：<https://zx2003.github.io/threejs-scene-factory/room.html>
 
 ### 收音机检查参数
 
@@ -270,7 +271,7 @@ npm run build
 参数可以组合，例如：
 
 ```text
-https://zx2003.github.io/img2threejs-vintage-radio/?light=grazing&az=45&el=16
+https://zx2003.github.io/threejs-scene-factory/?light=grazing&az=45&el=16
 ```
 
 ### 收音机模型结构

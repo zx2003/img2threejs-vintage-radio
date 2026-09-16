@@ -29,7 +29,7 @@ const requestedSelection = query.get('select');
 
 const badge = document.createElement('div');
 badge.className = 'badge';
-badge.innerHTML = '<strong>Vintage Radio · Optimized</strong>拖动旋转 · 滚轮缩放 · 点击选择部件';
+badge.innerHTML = '<strong>Three.js Scene Factory</strong>收音机示例 · 拖动旋转 · 滚轮缩放 · 点击选择部件';
 if (!captureMode) app.appendChild(badge);
 
 const scene = new THREE.Scene();

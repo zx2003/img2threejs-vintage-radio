@@ -1,6 +1,6 @@
-# Three.js Scene Factory v1.0.0
+# Three.js Scene Factory v1.0.1
 
-首个可运行的通用场景生成 Pipeline 版本。
+项目名称与 GitHub 仓库已统一为 `Three.js Scene Factory` / `threejs-scene-factory`，并保留完整的通用场景生成 Pipeline、收音机示例和房间示例。
 
 ## 主要内容
 
@@ -14,7 +14,7 @@
 
 ## Release 附件
 
-- `threejs-scene-factory-v1.0.0.zip`：完整仓库源码包。
+- `threejs-scene-factory-v1.0.1.zip`：完整仓库源码包。
 - `observatory-project.zip`：可独立安装运行的天文台生成项目。
 - `ACCEPTANCE_REPORT.md`：实际验收报告。
 - `SHA256SUMS.txt`：ZIP 文件校验值。

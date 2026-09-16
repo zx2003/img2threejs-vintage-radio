@@ -77,10 +77,10 @@ hud.className = 'room-hud';
 hud.innerHTML = `
   <div class="room-title-row">
     <div>
-      <span class="room-kicker">INTERACTIVE LOW-POLY SCENE</span>
+      <span class="room-kicker">THREE.JS SCENE FACTORY · ROOM EXAMPLE</span>
       <h1>温暖卧室书房</h1>
     </div>
-    <a class="scene-link" href="./" title="返回原有收音机预览">收音机</a>
+    <a class="scene-link" href="./" title="返回收音机示例">收音机示例</a>
   </div>
   <p id="room-hint" class="room-hint">点击门、抽屉或台灯 · 拖动办公椅 · 鼠标拖动旋转视角</p>
   <div class="room-help-grid" aria-label="交互说明">
